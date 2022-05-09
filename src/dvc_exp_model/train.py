@@ -13,7 +13,7 @@ import tarfile
 import imageio
 from dvclive.keras import DvcLiveCallback
 
-DATASET_FILE = "data/images.tar.gz"
+DATASET_FILE = "dataset/images.tar.gz"
 OUTPUT_DIR = "models"
 
 METRICS_FILE = "metrics.json"

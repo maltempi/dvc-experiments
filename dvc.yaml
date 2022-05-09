@@ -1,8 +1,8 @@
 stages:
   train:
-    cmd: python src/lenet/train.py
+    cmd: python src/dvc_exp_model/train.py
     deps:
-    - data
+    - dataset
     - src
     params:
     - model
