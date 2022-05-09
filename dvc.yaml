@@ -1,0 +1,17 @@
+stages:
+  train:
+    cmd: python src/lenet/train.py
+    deps:
+    - data
+    - src
+    params:
+    - model
+    - train
+    outs:
+    - models
+    metrics:
+    - metrics.json:
+        cache: false
+    plots:
+    - plots:
+        cache: false
