@@ -13,11 +13,13 @@ jobs:
         run: |
           pip install -r requirements.txt
           dvc pull dataset
-          dvc repro 
+          dvc repro
 
-          echo "# Metrics" >> report.md
-          cat metrics.json >> report.md
+          git fetch --prune
+          dvc metrics diff --show-md main >> report.md
+
+          dvc plots diff --target dvclive/scalars/loss.tsv --show-vega main > vega.json
+          vl2png vega.json | cml publish --md >> report.md
           
-          echo "# Confusion matrix" >> report.md
-          cml publish plots/confusion.png --md >> report.md
+          dvc push data --run-cache
           cml send-comment report.md
