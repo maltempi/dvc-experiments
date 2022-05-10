@@ -9,12 +9,23 @@ jobs:
       - name: Train model
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
           pip install -r requirements.txt
-          dvc exp run
-          echo "# Metrics"
-          cat metrics.json >> report.md
+          dvc pull dataset
+          dvc repro
           
-          echo "# Confusion matrix"
-          cml publish plots/confusion.png --md >> report.md
+          git config --global --add safe.directory /__w/dvc-experiments/dvc-experiments
+          
+          git fetch --prune
+          
+          dvc metrics diff --show-md main >> report.md
+          
+          dvc plots diff --target dvclive/scalars/loss.tsv --show-vega main > vega.json
+          
+          vl2png vega.json > vega.png
+          cml publish vega.png --md >> report.md
+          
+          dvc push dataset --run-cache
+          
           cml send-comment report.md
