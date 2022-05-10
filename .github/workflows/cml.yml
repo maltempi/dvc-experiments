@@ -12,7 +12,6 @@ jobs:
         run: |
           pip install -r requirements.txt
           dvc exp run
-
           echo "# Metrics"
           cat metrics.json >> report.md
           
