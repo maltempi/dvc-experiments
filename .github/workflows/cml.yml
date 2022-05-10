@@ -15,9 +15,9 @@ jobs:
           dvc pull dataset
           dvc repro 
 
-          echo "# Metrics"
+          echo "# Metrics" >> report.md
           cat metrics.json >> report.md
           
-          echo "# Confusion matrix"
+          echo "# Confusion matrix" >> report.md
           cml publish plots/confusion.png --md >> report.md
           cml send-comment report.md
