@@ -32,5 +32,6 @@ jobs:
           git commit -m "CML"
           
           dvc push
+          git push
           
           cml send-comment report.md
