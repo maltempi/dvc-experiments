@@ -12,9 +12,8 @@ jobs:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
           pip install -r requirements.txt
-          dvc pull
-          dvc exp run
-          #python src/dvc_exp_model/train.py 
+          dvc pull dataset
+          dvc repro 
 
           echo "# Metrics"
           cat metrics.json >> report.md
