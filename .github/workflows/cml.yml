@@ -26,6 +26,9 @@ jobs:
           vl2png vega.json > vega.png
           cml publish vega.png --md >> report.md
           
-          dvc push --run-cache
+          git add dvc.lock
+          git commit -m "CML"
+          
+          dvc push
           
           cml send-comment report.md
