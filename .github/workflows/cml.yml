@@ -26,6 +26,8 @@ jobs:
           vl2png vega.json > vega.png
           cml publish vega.png --md >> report.md
           
+          git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
           git add dvc.lock
           git commit -m "CML"
           
