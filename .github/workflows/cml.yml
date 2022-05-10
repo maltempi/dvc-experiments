@@ -16,9 +16,6 @@ jobs:
           dvc repro
           echo "dvc repro OK"
           
-          git fetch --prune
-          echo "fetch prune"
-          
           dvc metrics diff --show-md main >> report.md
           echo "dvc metrics diff"
           
