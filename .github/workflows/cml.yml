@@ -11,7 +11,9 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pip install -r requirements.txt
-          dvc exp run
+          #dvc exp run
+          python src/dvc_exp_model/train.py 
+
           echo "# Metrics"
           cat metrics.json >> report.md
           
