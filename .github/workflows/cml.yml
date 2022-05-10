@@ -29,8 +29,10 @@ jobs:
           dvc plots diff --target dvclive/scalars/loss.tsv --show-vega main > vega.json
           echo "plots diff"
           
-          vl2png vega.json | cml publish --md >> report.md
+          vl2png vega.json > vega.png
           echo "vl2png"
+          cml publish vega.png --md >> report.md
+          echo "vl2png2"
           
           dvc push dataset --run-cache
           echo "push"
