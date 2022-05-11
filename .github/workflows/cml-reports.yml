@@ -4,7 +4,6 @@ on:
     workflows: [CML Training]
     types:
       - completed
-  push:
   workflow_dispatch:
 jobs:
   run:
