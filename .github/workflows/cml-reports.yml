@@ -1,4 +1,4 @@
-name: CML
+name: CML Reports
 on: [push]
 jobs:
   run:
