@@ -1,0 +1,57 @@
+name: CML
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    container: docker://ghcr.io/iterative/cml:0-dvc2-base1
+    steps:
+      - uses: actions/checkout@v2
+      - name: Train model
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+        run: |          
+          cml ci
+
+          if [ $GITHUB_REF = refs/heads/main ]; then
+            PREVIOUS_REF=HEAD~1
+          else
+            PREVIOUS_REF=main
+          fi
+
+          #dvc pull dataset
+          #dvc repro
+
+          echo "# CML Report" > report.md
+
+          echo "## Plots" >> report.md
+
+          echo "### Loss" >> report.md
+
+          echo "#### Training" >> report.md
+          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/loss.tsv > vega.json
+          vl2svg vega.json loss.svg
+          cml publish loss.svg --title "Training Loss" --md >> report.md
+
+          echo "#### Validation" >> report.md
+          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/val_loss.tsv > vega.json
+          vl2svg vega.json val_loss.svg
+          cml publish val_loss.svg --title "Validation Loss" --md >> report.md
+          
+
+          echo "### Accuracy" >> report.md
+
+          echo "#### Training" >> report.md
+          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/acc.tsv > vega.json
+          vl2svg vega.json acc.svg
+          cml publish acc.svg --title "Training Accuracy" --md >> report.md
+
+          echo "#### Validation" >> report.md
+          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/val_acc.tsv > vega.json
+          vl2svg vega.json val_acc.svg
+          cml publish acc.svg --title "Validation Accuracy" --md >> report.md
+
+          echo "## Metrics and Params" >> report.md
+          echo "### $PREVIOUS_REF → workspace" >> report.md
+          dvc exp diff $PREVIOUS_REF --show-md >> report.md
+          cml send-comment report.md
