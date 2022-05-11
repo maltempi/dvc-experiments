@@ -1,0 +1,31 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/dvc_exp_model/train.py
+    deps:
+    - path: dataset
+      md5: 687552951726b99c2eee15d29b4ccf0e.dir
+      size: 17397981
+      nfiles: 3
+    - path: src
+      md5: 1029aed5a5b5583087e9b79e5fef592f.dir
+      size: 14623
+      nfiles: 4
+    params:
+      params.yaml:
+        model:
+          conv_units: 16
+        train:
+          epochs: 10
+    outs:
+    - path: metrics.json
+      md5: 7b71a74c38ad8201cc1dec3c87803f57
+      size: 55
+    - path: models
+      md5: 9c37f6eb5472fe4f678a6dbcb93ac0b2.dir
+      size: 4208304
+      nfiles: 1
+    - path: plots
+      md5: e3da6f07b8735585545218aa4605ec0d.dir
+      size: 71850
+      nfiles: 2
