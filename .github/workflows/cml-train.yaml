@@ -1,5 +1,5 @@
 name: CML Training
-on: [workflow_dispatch]
+on: [workflow_dispatch,push]
 jobs:
   run:
     runs-on: ubuntu-latest
