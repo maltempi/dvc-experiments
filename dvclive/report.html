@@ -13,198 +13,13 @@
 <body>
     <table>
 <thead>
-<tr><th>dvclive.json                                                                                                                                 </th></tr>
+<tr><th>dvclive.json                                                                                                                                   </th></tr>
 </thead>
 <tbody>
-<tr><td>{&#x27;data&#x27;: {&#x27;step&#x27;: 9, &#x27;loss&#x27;: 0.03769935294985771, &#x27;acc&#x27;: 0.9877499938011169, &#x27;val_loss&#x27;: 0.03710200637578964, &#x27;val_acc&#x27;: 0.9868999719619751}}</td></tr>
+<tr><td>{&#x27;data&#x27;: {&#x27;step&#x27;: 19, &#x27;loss&#x27;: 0.021885400637984276, &#x27;acc&#x27;: 0.9923999905586243, &#x27;val_loss&#x27;: 0.03191865235567093, &#x27;val_acc&#x27;: 0.9901999831199646}}</td></tr>
 </tbody>
 </table>
 <br>
-
-    <div id = "plot_acc">
-        <script type = "text/javascript">
-            var spec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "data": {
-        "values": [
-    {
-        "acc": "0.9047333598136902",
-        "rev": "workspace",
-        "step": "0",
-        "timestamp": "1652287356660"
-    },
-    {
-        "acc": "0.9609000086784363",
-        "rev": "workspace",
-        "step": "1",
-        "timestamp": "1652287362939"
-    },
-    {
-        "acc": "0.9698500037193298",
-        "rev": "workspace",
-        "step": "2",
-        "timestamp": "1652287371158"
-    },
-    {
-        "acc": "0.9752333164215088",
-        "rev": "workspace",
-        "step": "3",
-        "timestamp": "1652287377324"
-    },
-    {
-        "acc": "0.9787833094596863",
-        "rev": "workspace",
-        "step": "4",
-        "timestamp": "1652287384058"
-    },
-    {
-        "acc": "0.9811166524887085",
-        "rev": "workspace",
-        "step": "5",
-        "timestamp": "1652287390762"
-    },
-    {
-        "acc": "0.9834333062171936",
-        "rev": "workspace",
-        "step": "6",
-        "timestamp": "1652287397398"
-    },
-    {
-        "acc": "0.9849166870117188",
-        "rev": "workspace",
-        "step": "7",
-        "timestamp": "1652287403985"
-    },
-    {
-        "acc": "0.9860166907310486",
-        "rev": "workspace",
-        "step": "8",
-        "timestamp": "1652287411165"
-    },
-    {
-        "acc": "0.9877499938011169",
-        "rev": "workspace",
-        "step": "9",
-        "timestamp": "1652287418180"
-    }
-]
-    },
-    "title": "",
-    "width": 300,
-    "height": 300,
-    "layer": [
-        {
-            "encoding": {
-                "x": {
-                    "field": "step",
-                    "type": "quantitative",
-                    "title": "step"
-                },
-                "y": {
-                    "field": "acc",
-                    "type": "quantitative",
-                    "title": "acc",
-                    "scale": {
-                        "zero": false
-                    }
-                },
-                "color": {
-                    "field": "rev",
-                    "type": "nominal"
-                }
-            },
-            "layer": [
-                {
-                    "mark": "line"
-                },
-                {
-                    "selection": {
-                        "label": {
-                            "type": "single",
-                            "nearest": true,
-                            "on": "mouseover",
-                            "encodings": [
-                                "x"
-                            ],
-                            "empty": "none",
-                            "clear": "mouseout"
-                        }
-                    },
-                    "mark": "point",
-                    "encoding": {
-                        "opacity": {
-                            "condition": {
-                                "selection": "label",
-                                "value": 1
-                            },
-                            "value": 0
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "transform": [
-                {
-                    "filter": {
-                        "selection": "label"
-                    }
-                }
-            ],
-            "layer": [
-                {
-                    "mark": {
-                        "type": "rule",
-                        "color": "gray"
-                    },
-                    "encoding": {
-                        "x": {
-                            "field": "step",
-                            "type": "quantitative"
-                        }
-                    }
-                },
-                {
-                    "encoding": {
-                        "text": {
-                            "type": "quantitative",
-                            "field": "acc"
-                        },
-                        "x": {
-                            "field": "step",
-                            "type": "quantitative"
-                        },
-                        "y": {
-                            "field": "acc",
-                            "type": "quantitative"
-                        }
-                    },
-                    "layer": [
-                        {
-                            "mark": {
-                                "type": "text",
-                                "align": "left",
-                                "dx": 5,
-                                "dy": -5
-                            },
-                            "encoding": {
-                                "color": {
-                                    "type": "nominal",
-                                    "field": "rev"
-                                }
-                            }
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}
-;
-            vegaEmbed('#plot_acc', spec);
-        </script>
-    </div>
-    
 
     <div id = "plot_loss">
         <script type = "text/javascript">
@@ -213,64 +28,124 @@
     "data": {
         "values": [
     {
-        "loss": "0.3220314681529999",
+        "loss": "0.3518387973308563",
         "rev": "workspace",
         "step": "0",
-        "timestamp": "1652287356621"
+        "timestamp": "1652289443801"
     },
     {
-        "loss": "0.13023807108402252",
+        "loss": "0.14577047526836395",
         "rev": "workspace",
         "step": "1",
-        "timestamp": "1652287362882"
+        "timestamp": "1652289452951"
     },
     {
-        "loss": "0.09674633294343948",
+        "loss": "0.10914424806833267",
         "rev": "workspace",
         "step": "2",
-        "timestamp": "1652287371148"
+        "timestamp": "1652289462632"
     },
     {
-        "loss": "0.08041063696146011",
+        "loss": "0.08995076268911362",
         "rev": "workspace",
         "step": "3",
-        "timestamp": "1652287377275"
+        "timestamp": "1652289471828"
     },
     {
-        "loss": "0.06767826527357101",
+        "loss": "0.07623717933893204",
         "rev": "workspace",
         "step": "4",
-        "timestamp": "1652287384037"
+        "timestamp": "1652289481460"
     },
     {
-        "loss": "0.05937931686639786",
+        "loss": "0.06815997511148453",
         "rev": "workspace",
         "step": "5",
-        "timestamp": "1652287390751"
+        "timestamp": "1652289491337"
     },
     {
-        "loss": "0.05206063762307167",
+        "loss": "0.06049196794629097",
         "rev": "workspace",
         "step": "6",
-        "timestamp": "1652287397366"
+        "timestamp": "1652289501050"
     },
     {
-        "loss": "0.04581030458211899",
+        "loss": "0.053651854395866394",
         "rev": "workspace",
         "step": "7",
-        "timestamp": "1652287403928"
+        "timestamp": "1652289510778"
     },
     {
-        "loss": "0.043814461678266525",
+        "loss": "0.04845711961388588",
         "rev": "workspace",
         "step": "8",
-        "timestamp": "1652287411111"
+        "timestamp": "1652289520326"
     },
     {
-        "loss": "0.03769935294985771",
+        "loss": "0.04497262462973595",
         "rev": "workspace",
         "step": "9",
-        "timestamp": "1652287418157"
+        "timestamp": "1652289530286"
+    },
+    {
+        "loss": "0.04122578352689743",
+        "rev": "workspace",
+        "step": "10",
+        "timestamp": "1652289540257"
+    },
+    {
+        "loss": "0.038634687662124634",
+        "rev": "workspace",
+        "step": "11",
+        "timestamp": "1652289550078"
+    },
+    {
+        "loss": "0.035207152366638184",
+        "rev": "workspace",
+        "step": "12",
+        "timestamp": "1652289559709"
+    },
+    {
+        "loss": "0.03219043090939522",
+        "rev": "workspace",
+        "step": "13",
+        "timestamp": "1652289569116"
+    },
+    {
+        "loss": "0.029909741133451462",
+        "rev": "workspace",
+        "step": "14",
+        "timestamp": "1652289578634"
+    },
+    {
+        "loss": "0.027753638103604317",
+        "rev": "workspace",
+        "step": "15",
+        "timestamp": "1652289588595"
+    },
+    {
+        "loss": "0.02692803181707859",
+        "rev": "workspace",
+        "step": "16",
+        "timestamp": "1652289598799"
+    },
+    {
+        "loss": "0.0249473936855793",
+        "rev": "workspace",
+        "step": "17",
+        "timestamp": "1652289609019"
+    },
+    {
+        "loss": "0.022433612495660782",
+        "rev": "workspace",
+        "step": "18",
+        "timestamp": "1652289618918"
+    },
+    {
+        "loss": "0.021885400637984276",
+        "rev": "workspace",
+        "step": "19",
+        "timestamp": "1652289628664"
     }
 ]
     },
@@ -391,6 +266,251 @@
     </div>
     
 
+    <div id = "plot_val_loss">
+        <script type = "text/javascript">
+            var spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+        "values": [
+    {
+        "rev": "workspace",
+        "step": "0",
+        "timestamp": "1652289443801",
+        "val_loss": "0.12252890318632126"
+    },
+    {
+        "rev": "workspace",
+        "step": "1",
+        "timestamp": "1652289452952",
+        "val_loss": "0.07815558463335037"
+    },
+    {
+        "rev": "workspace",
+        "step": "2",
+        "timestamp": "1652289462633",
+        "val_loss": "0.06303064525127411"
+    },
+    {
+        "rev": "workspace",
+        "step": "3",
+        "timestamp": "1652289471829",
+        "val_loss": "0.05326208472251892"
+    },
+    {
+        "rev": "workspace",
+        "step": "4",
+        "timestamp": "1652289481461",
+        "val_loss": "0.04985099658370018"
+    },
+    {
+        "rev": "workspace",
+        "step": "5",
+        "timestamp": "1652289491338",
+        "val_loss": "0.04447305202484131"
+    },
+    {
+        "rev": "workspace",
+        "step": "6",
+        "timestamp": "1652289501051",
+        "val_loss": "0.04155554249882698"
+    },
+    {
+        "rev": "workspace",
+        "step": "7",
+        "timestamp": "1652289510780",
+        "val_loss": "0.03862583264708519"
+    },
+    {
+        "rev": "workspace",
+        "step": "8",
+        "timestamp": "1652289520328",
+        "val_loss": "0.037171196192502975"
+    },
+    {
+        "rev": "workspace",
+        "step": "9",
+        "timestamp": "1652289530287",
+        "val_loss": "0.0384165495634079"
+    },
+    {
+        "rev": "workspace",
+        "step": "10",
+        "timestamp": "1652289540259",
+        "val_loss": "0.03685665875673294"
+    },
+    {
+        "rev": "workspace",
+        "step": "11",
+        "timestamp": "1652289550079",
+        "val_loss": "0.034946996718645096"
+    },
+    {
+        "rev": "workspace",
+        "step": "12",
+        "timestamp": "1652289559710",
+        "val_loss": "0.03286333382129669"
+    },
+    {
+        "rev": "workspace",
+        "step": "13",
+        "timestamp": "1652289569117",
+        "val_loss": "0.032964833080768585"
+    },
+    {
+        "rev": "workspace",
+        "step": "14",
+        "timestamp": "1652289578635",
+        "val_loss": "0.03307881951332092"
+    },
+    {
+        "rev": "workspace",
+        "step": "15",
+        "timestamp": "1652289588596",
+        "val_loss": "0.03538466989994049"
+    },
+    {
+        "rev": "workspace",
+        "step": "16",
+        "timestamp": "1652289598800",
+        "val_loss": "0.03387681394815445"
+    },
+    {
+        "rev": "workspace",
+        "step": "17",
+        "timestamp": "1652289609021",
+        "val_loss": "0.031617019325494766"
+    },
+    {
+        "rev": "workspace",
+        "step": "18",
+        "timestamp": "1652289618920",
+        "val_loss": "0.03426072373986244"
+    },
+    {
+        "rev": "workspace",
+        "step": "19",
+        "timestamp": "1652289628666",
+        "val_loss": "0.03191865235567093"
+    }
+]
+    },
+    "title": "",
+    "width": 300,
+    "height": 300,
+    "layer": [
+        {
+            "encoding": {
+                "x": {
+                    "field": "step",
+                    "type": "quantitative",
+                    "title": "step"
+                },
+                "y": {
+                    "field": "val_loss",
+                    "type": "quantitative",
+                    "title": "val_loss",
+                    "scale": {
+                        "zero": false
+                    }
+                },
+                "color": {
+                    "field": "rev",
+                    "type": "nominal"
+                }
+            },
+            "layer": [
+                {
+                    "mark": "line"
+                },
+                {
+                    "selection": {
+                        "label": {
+                            "type": "single",
+                            "nearest": true,
+                            "on": "mouseover",
+                            "encodings": [
+                                "x"
+                            ],
+                            "empty": "none",
+                            "clear": "mouseout"
+                        }
+                    },
+                    "mark": "point",
+                    "encoding": {
+                        "opacity": {
+                            "condition": {
+                                "selection": "label",
+                                "value": 1
+                            },
+                            "value": 0
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "selection": "label"
+                    }
+                }
+            ],
+            "layer": [
+                {
+                    "mark": {
+                        "type": "rule",
+                        "color": "gray"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "step",
+                            "type": "quantitative"
+                        }
+                    }
+                },
+                {
+                    "encoding": {
+                        "text": {
+                            "type": "quantitative",
+                            "field": "val_loss"
+                        },
+                        "x": {
+                            "field": "step",
+                            "type": "quantitative"
+                        },
+                        "y": {
+                            "field": "val_loss",
+                            "type": "quantitative"
+                        }
+                    },
+                    "layer": [
+                        {
+                            "mark": {
+                                "type": "text",
+                                "align": "left",
+                                "dx": 5,
+                                "dy": -5
+                            },
+                            "encoding": {
+                                "color": {
+                                    "type": "nominal",
+                                    "field": "rev"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+;
+            vegaEmbed('#plot_val_loss', spec);
+        </script>
+    </div>
+    
+
     <div id = "plot_val_acc">
         <script type = "text/javascript">
             var spec = {
@@ -400,62 +520,122 @@
     {
         "rev": "workspace",
         "step": "0",
-        "timestamp": "1652287356744",
-        "val_acc": "0.9639999866485596"
+        "timestamp": "1652289443801",
+        "val_acc": "0.9657999873161316"
     },
     {
         "rev": "workspace",
         "step": "1",
-        "timestamp": "1652287363048",
-        "val_acc": "0.9769999980926514"
+        "timestamp": "1652289452953",
+        "val_acc": "0.9761000275611877"
     },
     {
         "rev": "workspace",
         "step": "2",
-        "timestamp": "1652287371179",
-        "val_acc": "0.9807999730110168"
+        "timestamp": "1652289462634",
+        "val_acc": "0.9793000221252441"
     },
     {
         "rev": "workspace",
         "step": "3",
-        "timestamp": "1652287377437",
-        "val_acc": "0.9830999970436096"
+        "timestamp": "1652289471831",
+        "val_acc": "0.9825999736785889"
     },
     {
         "rev": "workspace",
         "step": "4",
-        "timestamp": "1652287384100",
-        "val_acc": "0.9833999872207642"
+        "timestamp": "1652289481461",
+        "val_acc": "0.984000027179718"
     },
     {
         "rev": "workspace",
         "step": "5",
-        "timestamp": "1652287390790",
-        "val_acc": "0.9853000044822693"
+        "timestamp": "1652289491339",
+        "val_acc": "0.9843000173568726"
     },
     {
         "rev": "workspace",
         "step": "6",
-        "timestamp": "1652287397506",
+        "timestamp": "1652289501052",
         "val_acc": "0.9861000180244446"
     },
     {
         "rev": "workspace",
         "step": "7",
-        "timestamp": "1652287404095",
-        "val_acc": "0.9869999885559082"
+        "timestamp": "1652289510780",
+        "val_acc": "0.9872999787330627"
     },
     {
         "rev": "workspace",
         "step": "8",
-        "timestamp": "1652287411278",
-        "val_acc": "0.9865999817848206"
+        "timestamp": "1652289520328",
+        "val_acc": "0.9869999885559082"
     },
     {
         "rev": "workspace",
         "step": "9",
-        "timestamp": "1652287418215",
+        "timestamp": "1652289530288",
+        "val_acc": "0.9860000014305115"
+    },
+    {
+        "rev": "workspace",
+        "step": "10",
+        "timestamp": "1652289540260",
         "val_acc": "0.9868999719619751"
+    },
+    {
+        "rev": "workspace",
+        "step": "11",
+        "timestamp": "1652289550079",
+        "val_acc": "0.987500011920929"
+    },
+    {
+        "rev": "workspace",
+        "step": "12",
+        "timestamp": "1652289559710",
+        "val_acc": "0.9894999861717224"
+    },
+    {
+        "rev": "workspace",
+        "step": "13",
+        "timestamp": "1652289569119",
+        "val_acc": "0.9901000261306763"
+    },
+    {
+        "rev": "workspace",
+        "step": "14",
+        "timestamp": "1652289578636",
+        "val_acc": "0.9891999959945679"
+    },
+    {
+        "rev": "workspace",
+        "step": "15",
+        "timestamp": "1652289588597",
+        "val_acc": "0.9886999726295471"
+    },
+    {
+        "rev": "workspace",
+        "step": "16",
+        "timestamp": "1652289598800",
+        "val_acc": "0.9886999726295471"
+    },
+    {
+        "rev": "workspace",
+        "step": "17",
+        "timestamp": "1652289609021",
+        "val_acc": "0.9897000193595886"
+    },
+    {
+        "rev": "workspace",
+        "step": "18",
+        "timestamp": "1652289618920",
+        "val_acc": "0.9886000156402588"
+    },
+    {
+        "rev": "workspace",
+        "step": "19",
+        "timestamp": "1652289628666",
+        "val_acc": "0.9901999831199646"
     }
 ]
     },
@@ -576,71 +756,131 @@
     </div>
     
 
-    <div id = "plot_val_loss">
+    <div id = "plot_acc">
         <script type = "text/javascript">
             var spec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
     "data": {
         "values": [
     {
+        "acc": "0.8993666768074036",
         "rev": "workspace",
         "step": "0",
-        "timestamp": "1652287356703",
-        "val_loss": "0.1214829683303833"
+        "timestamp": "1652289443801"
     },
     {
+        "acc": "0.9550666809082031",
         "rev": "workspace",
         "step": "1",
-        "timestamp": "1652287362994",
-        "val_loss": "0.07773513346910477"
+        "timestamp": "1652289452952"
     },
     {
+        "acc": "0.9664333462715149",
         "rev": "workspace",
         "step": "2",
-        "timestamp": "1652287371169",
-        "val_loss": "0.05881921947002411"
+        "timestamp": "1652289462633"
     },
     {
+        "acc": "0.9716500043869019",
         "rev": "workspace",
         "step": "3",
-        "timestamp": "1652287377381",
-        "val_loss": "0.051415760070085526"
+        "timestamp": "1652289471829"
     },
     {
+        "acc": "0.9761999845504761",
         "rev": "workspace",
         "step": "4",
-        "timestamp": "1652287384079",
-        "val_loss": "0.047682929784059525"
+        "timestamp": "1652289481460"
     },
     {
+        "acc": "0.9782999753952026",
         "rev": "workspace",
         "step": "5",
-        "timestamp": "1652287390773",
-        "val_loss": "0.04191000014543533"
+        "timestamp": "1652289491338"
     },
     {
+        "acc": "0.9805333614349365",
         "rev": "workspace",
         "step": "6",
-        "timestamp": "1652287397452",
-        "val_loss": "0.042290013283491135"
+        "timestamp": "1652289501050"
     },
     {
+        "acc": "0.9824833273887634",
         "rev": "workspace",
         "step": "7",
-        "timestamp": "1652287404041",
-        "val_loss": "0.0399128757417202"
+        "timestamp": "1652289510779"
     },
     {
+        "acc": "0.9847999811172485",
         "rev": "workspace",
         "step": "8",
-        "timestamp": "1652287411223",
-        "val_loss": "0.03916388377547264"
+        "timestamp": "1652289520327"
     },
     {
+        "acc": "0.9855333566665649",
         "rev": "workspace",
         "step": "9",
-        "timestamp": "1652287418198",
-        "val_loss": "0.03710200637578964"
+        "timestamp": "1652289530287"
+    },
+    {
+        "acc": "0.9862666726112366",
+        "rev": "workspace",
+        "step": "10",
+        "timestamp": "1652289540258"
+    },
+    {
+        "acc": "0.9873166680335999",
+        "rev": "workspace",
+        "step": "11",
+        "timestamp": "1652289550078"
+    },
+    {
+        "acc": "0.9877499938011169",
+        "rev": "workspace",
+        "step": "12",
+        "timestamp": "1652289559709"
+    },
+    {
+        "acc": "0.9891666769981384",
+        "rev": "workspace",
+        "step": "13",
+        "timestamp": "1652289569117"
+    },
+    {
+        "acc": "0.9898499846458435",
+        "rev": "workspace",
+        "step": "14",
+        "timestamp": "1652289578635"
+    },
+    {
+        "acc": "0.9904000163078308",
+        "rev": "workspace",
+        "step": "15",
+        "timestamp": "1652289588596"
+    },
+    {
+        "acc": "0.990933358669281",
+        "rev": "workspace",
+        "step": "16",
+        "timestamp": "1652289598799"
+    },
+    {
+        "acc": "0.9912999868392944",
+        "rev": "workspace",
+        "step": "17",
+        "timestamp": "1652289609020"
+    },
+    {
+        "acc": "0.9925166964530945",
+        "rev": "workspace",
+        "step": "18",
+        "timestamp": "1652289618919"
+    },
+    {
+        "acc": "0.9923999905586243",
+        "rev": "workspace",
+        "step": "19",
+        "timestamp": "1652289628665"
     }
 ]
     },
@@ -656,9 +896,9 @@
                     "title": "step"
                 },
                 "y": {
-                    "field": "val_loss",
+                    "field": "acc",
                     "type": "quantitative",
-                    "title": "val_loss",
+                    "title": "acc",
                     "scale": {
                         "zero": false
                     }
@@ -723,14 +963,14 @@
                     "encoding": {
                         "text": {
                             "type": "quantitative",
-                            "field": "val_loss"
+                            "field": "acc"
                         },
                         "x": {
                             "field": "step",
                             "type": "quantitative"
                         },
                         "y": {
-                            "field": "val_loss",
+                            "field": "acc",
                             "type": "quantitative"
                         }
                     },
@@ -756,7 +996,7 @@
     ]
 }
 ;
-            vegaEmbed('#plot_val_loss', spec);
+            vegaEmbed('#plot_acc', spec);
         </script>
     </div>
     
