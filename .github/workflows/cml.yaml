@@ -53,6 +53,8 @@ jobs:
             PREVIOUS_REF=main
           fi
 
+          git fetch --prune
+
           echo "# CML Report" > report.md
           
           echo "## Plots" >> report.md
