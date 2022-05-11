@@ -1,5 +1,5 @@
 name: CML Training
-on: [workflow_dispatch]
+on: [workflow_dispatch,push]
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -11,6 +11,8 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |          
+          pip install -r requirements.txt
+          
           cml ci
 
           if [ $GITHUB_REF = refs/heads/main ]; then
@@ -29,3 +31,5 @@ jobs:
           git commit -m "Running experiment"
           
           git push origin $GITHUB_BRANCH
+          
+          dvc push

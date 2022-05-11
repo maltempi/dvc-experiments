@@ -1,5 +1,10 @@
 name: CML Reports
-on: [push]
+on:
+  workflow_run:
+    workflows: [CML Training]
+    types:
+      - completed
+  workflow_dispatch:
 jobs:
   run:
     runs-on: ubuntu-latest
