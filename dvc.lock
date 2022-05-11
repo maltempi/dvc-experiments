@@ -8,7 +8,7 @@ stages:
       size: 17397981
       nfiles: 3
     - path: src
-      md5: b958d278f0857d954ebfcb152729b6a3.dir
+      md5: 4150b842c70883089793f7c2bcf8738b.dir
       size: 14623
       nfiles: 4
     params:
@@ -19,13 +19,13 @@ stages:
           epochs: 10
     outs:
     - path: metrics.json
-      md5: bc2d4126f042257696bb46a4b725c3a0
+      md5: b2597b655b80ee5d35bf2816d41e7bbe
       size: 57
     - path: models
-      md5: 447205693ebf5f3e3bbde3b533367857.dir
+      md5: 4266da53c1bd8bd5c9c2b132a082dc89.dir
       size: 4208304
       nfiles: 1
     - path: plots
-      md5: 3e13e71df841e9c459d1e4f94a6399f7.dir
-      size: 70133
+      md5: a145aa24d502269119513ab351bdaa85.dir
+      size: 70349
       nfiles: 2
