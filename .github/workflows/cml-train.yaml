@@ -31,3 +31,5 @@ jobs:
           git commit -m "Running experiment"
           
           git push origin $GITHUB_BRANCH
+          
+          dvc push
