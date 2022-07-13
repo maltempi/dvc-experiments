@@ -8,7 +8,7 @@ stages:
       size: 17397981
       nfiles: 3
     - path: src
-      md5: 9c18ac31c888e2bd0c7c15971eb6671f.dir
+      md5: b2d14361b39b9560383c9f350dbd44ec.dir
       size: 14623
       nfiles: 4
     params:
@@ -16,16 +16,16 @@ stages:
         model:
           conv_units: 16
         train:
-          epochs: 10
+          epochs: 5
     outs:
     - path: metrics.json
-      md5: a6d207b8c594905f7e2ef0b3671c339e
-      size: 56
+      md5: 1f2750c2adfadf69a2149983f71bf02c
+      size: 57
     - path: models
-      md5: b4ff23e7f1a6ac2eac5d656059b35e63.dir
+      md5: 316d1e182419333ef3d76ce3fa01a3c5.dir
       size: 4208304
       nfiles: 1
     - path: plots
-      md5: 620e8e0f647eb4f0301caaaed42d5426.dir
-      size: 69807
+      md5: 5cdcbab1a6ae0d9601a55782f56ea3f2.dir
+      size: 73435
       nfiles: 2
