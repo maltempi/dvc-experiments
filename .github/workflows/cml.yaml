@@ -65,25 +65,25 @@ jobs:
           
           echo "### Loss" >> report.md
           echo "#### Training" >> report.md
-          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/loss.tsv > vega.json
+          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/train/loss.tsv > vega.json
           vl2svg vega.json loss.svg
           cml publish loss.svg --title "Training Loss" --md >> report.md
           
           echo "#### Validation" >> report.md
-          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/val_loss.tsv > vega.json
+          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/eval/loss.tsv > vega.json
           vl2svg vega.json val_loss.svg
           cml publish val_loss.svg --title "Validation Loss" --md >> report.md
           
           echo "### Accuracy" >> report.md
           echo "#### Training" >> report.md
-          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/acc.tsv > vega.json
+          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/train/acc.tsv > vega.json
           vl2svg vega.json acc.svg
           cml publish acc.svg --title "Training Accuracy" --md >> report.md
 
           echo "#### Validation" >> report.md
-          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/val_acc.tsv > vega.json
+          dvc plots diff $PREVIOUS_REF workspace --show-vega --targets dvclive/scalars/eval/acc.tsv > vega.json
           vl2svg vega.json val_acc.svg
-          cml publish acc.svg --title "Validation Accuracy" --md >> report.md
+          cml publish val_acc.svg --title "Validation Accuracy" --md >> report.md
 
           echo "## Metrics and Params" >> report.md
           echo "### $PREVIOUS_REF → workspace" >> report.md
